@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useRef } from "react";
 import CollapseWrapper from "../common/collapse";
 const UseRefExercise = () => {
+    const divRef = useRef();
+    const handleChabgeDiv = () => {
+        divRef.current.style.height = "150px";
+        divRef.current.style.width = "80px";
+        divRef.current.innerHTML = "text";
+    };
+
     return (
         <CollapseWrapper title="Упражнение">
             <p className="mt-3">
@@ -18,9 +25,13 @@ const UseRefExercise = () => {
                     width: 60,
                     color: "white"
                 }}
+                ref={divRef}
             >
                 <small>Блок</small>
             </div>
+            <button className="btn btn-secondary mt-2" onClick={handleChabgeDiv}>
+                change
+            </button>
         </CollapseWrapper>
     );
 };

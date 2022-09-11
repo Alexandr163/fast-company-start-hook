@@ -26,10 +26,10 @@ const ProgrammableActionsExample = () => {
                 className="form-control"
                 id="email"
             />
-            <button className="btn btn-primary" onClick={handleClick}>
+            <button className="btn btn-primary mt-2" onClick={handleClick}>
                 focus input
             </button>
-            <button className="btn btn-secondary" onClick={handleClickWidth}>
+            <button className="btn btn-secondary mx-2 mt-2" onClick={handleClickWidth}>
                 изменить ширину объекта
             </button>
         </CardWrapper>
