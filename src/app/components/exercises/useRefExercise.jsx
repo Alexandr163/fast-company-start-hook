@@ -1,13 +1,13 @@
 import React, { useRef } from "react";
 import CollapseWrapper from "../common/collapse";
 const UseRefExercise = () => {
-    const divRef = useRef();
-    const handleChabgeDiv = () => {
-        divRef.current.style.height = "150px";
-        divRef.current.style.width = "80px";
-        divRef.current.innerHTML = "text";
-    };
+    const blockRef = useRef();
 
+    const handleClick = () => {
+        blockRef.current.children[0].innerText = "text";
+        blockRef.current.style.width = "150px";
+        blockRef.current.style.height = "80px";
+    };
     return (
         <CollapseWrapper title="Упражнение">
             <p className="mt-3">
@@ -19,18 +19,18 @@ const UseRefExercise = () => {
                 <li>высота и ширина станут равны 150 и 80 соответственно</li>
             </ul>
             <div
+                ref={blockRef}
                 className="bg-primary d-flex flex-row justify-content-center align-items-center rounded"
                 style={{
                     height: 40,
                     width: 60,
                     color: "white"
                 }}
-                ref={divRef}
             >
                 <small>Блок</small>
             </div>
-            <button className="btn btn-secondary mt-2" onClick={handleChabgeDiv}>
-                change
+            <button className="btn btn-secondary my-4" onClick={handleClick}>
+                Trigger action
             </button>
         </CollapseWrapper>
     );
